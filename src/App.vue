@@ -1,19 +1,32 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+
+    <input type="text" :placeholder="ph" @input="changeTitle">
+    <p>{{ title }}</p>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'app',
-  components: {
-    HelloWorld
-  }
+    data() {
+      return {
+          title: 'Hello',
+        ph: 'Write here any'
+      }
+    },
+    methods: {
+
+        changeTitle: function (event) {
+            this.title = event.target.value
+        }
+    }
+
+
 }
+
 </script>
 
 <style>
