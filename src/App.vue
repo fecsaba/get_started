@@ -1,11 +1,8 @@
 <template>
   <div id="app">
-    <div class="demo"
-         @click="attachRed = !attachRed"
-          :class="divClasses">
-    </div>
-    <div class="demo" :class="{red: attachRed}"></div>
-    <div class="demo" :class="[color, {red: attachRed}]"></div>
+    <div class="demo"></div>
+    <div class="demo"></div>
+    <div class="demo"></div>
     <hr>
     <input type="text" v-model="color">
   </div>
@@ -18,16 +15,7 @@ export default {
   name: 'app',
   data: function() {
   return {
-    attachRed: false,
-    color: 'green'
-    }
-  },
-  computed: {
-    divClasses: function () {
-      return {
-        red: this.attachRed,
-        blue: !this.attachRed
-      }
+    color: 'gray'
     }
   }
 
@@ -53,14 +41,14 @@ export default {
     margin: 10px;
   }
 
-  .red {
-    background-color: red;
-  }
-  .green {
-      background-color: green;
-    }
-  .blue {
-      background-color: blue;
-    }
+  /*.red {*/
+  /*  background-color: red;*/
+  /*}*/
+  /*.green {*/
+  /*    background-color: green;*/
+  /*  }*/
+  /*.blue {*/
+  /*    background-color: blue;*/
+  /*  }*/
 
 </style>
