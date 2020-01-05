@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <div class="demo"></div>
+    <div class="demo"
+         @click="attachRed = !attachRed"
+          :class="{red: attachRed}">
+    </div>
     <div class="demo"></div>
     <div class="demo"></div>
   </div>
@@ -11,6 +14,11 @@
 
 export default {
   name: 'app',
+  data: function() {
+  return {
+      attachRed: false
+    }
+  }
 
 }
 
@@ -33,5 +41,15 @@ export default {
     display: inline-block;
     margin: 10px;
   }
+
+  .red {
+    background-color: red;
+  }
+  .green {
+      background-color: green;
+    }
+  .blue {
+      background-color: blue;
+    }
 
 </style>
