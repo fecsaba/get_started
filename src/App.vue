@@ -6,8 +6,11 @@
     <p>{{ sayHello() }} - <a :href="link">{{google}}</a></p>
     <hr>
     <p>{{ finishedLink }}</p>
-    <p v-html="finishedLink"></p>
-  </div>
+    <p v-html="finishedLink"> </p>
+    <hr>
+    <button v-on:click="increase">Click me</button>
+    <h3>{{ counter }}</h3>
+    </div>
 </template>
 
 <script>
@@ -21,7 +24,8 @@ export default {
         ph: 'Write here any',
         link: 'https://google.com',
         google: 'Google',
-        finishedLink: '<a href="http://google.com">Google</a>'
+        finishedLink: '<a href="http://google.com">Google</a>',
+        counter: 0
       }
     },
     methods: {
@@ -32,6 +36,9 @@ export default {
       sayHello: function () {
           this.title = 'Hi'
         return this.title + ' vue'
+      },
+      increase: function() {
+          this.counter++
       }
     }
 
