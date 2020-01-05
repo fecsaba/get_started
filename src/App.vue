@@ -8,7 +8,7 @@
     <p>{{ finishedLink }}</p>
     <p v-html="finishedLink"> </p>
     <hr>
-    <button v-on:click="increase">Click me</button>
+    <button v-on:click="increase(2, $event)">Click me</button>
     <h3>{{ counter }}</h3>
     <p v-on:mousemove="updateCoordinates">Coordinates: {{ x }} / {{ y }}</p>
     </div>
@@ -40,8 +40,10 @@ export default {
           this.title = 'Hi'
         return this.title + ' vue'
       },
-      increase: function() {
-          this.counter++
+      increase: function(step, event) {
+          this.counter += step
+        // eslint-disable-next-line no-console
+        console.log(event)
       },
       updateCoordinates: function(event) {
           this.x = event.clientX
