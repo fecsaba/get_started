@@ -5,7 +5,9 @@
           :class="divClasses">
     </div>
     <div class="demo" :class="{red: attachRed}"></div>
-    <div class="demo"></div>
+    <div class="demo" :class="color"></div>
+    <hr>
+    <input type="text" v-model="color">
   </div>
 </template>
 
@@ -16,7 +18,8 @@ export default {
   name: 'app',
   data: function() {
   return {
-      attachRed: false
+    attachRed: false,
+    color: 'green'
     }
   },
   computed: {
