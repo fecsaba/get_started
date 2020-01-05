@@ -1,8 +1,9 @@
 <template>
   <div id="app">
-    <input type="text" v-model="name"/>
-    <p>{{ name }}</p>
-
+    <button v-on:click="increase">Increase</button>
+    <button v-on:click="decrease">Decrease</button>
+    <h3>Counter: {{ counter }}</h3>
+    <p>Result: {{ result }}</p>
   </div>
 </template>
 
@@ -12,12 +13,21 @@
 export default {
   name: 'app',
     data: function() {
-    return {
-        name: 'Rob'
+      return {
+        counter: 0,
+        result: ''
       }
     },
     methods: {
 
+      increase: function() {
+        this.counter++
+        this.result = this.counter > 5 ? 'Greater 5' : 'Smaller 5'
+      },
+      decrease: function() {
+        this.counter--
+        this.result = this.counter > 5 ? 'Greater 5' : 'Smaller 5'
+      }
     }
 }
 
