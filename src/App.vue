@@ -12,6 +12,8 @@
     <h3>{{ counter }}</h3>
     <p v-on:mousemove="updateCoordinates">
       Coordinates: {{ x }} / {{ y }} - <span v-on:mousemove.stop="">DEAD-SPOT</span></p>
+    <hr>
+    <input type="text" v-on:keyup.enter="alertMe"/>
     </div>
 </template>
 
@@ -52,6 +54,9 @@ export default {
       },
       dummy: function(event) {
           event.stopPropagation()
+      },
+      alertMe: function() {
+          alert('Alert')
       }
     }
 
