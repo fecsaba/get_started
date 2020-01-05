@@ -1,10 +1,12 @@
 <template>
   <div id="app">
     <div class="demo" :style="{backgroundColor: color}"></div>
-    <div class="demo"></div>
+    <div class="demo" :style="myStyle"></div>
     <div class="demo"></div>
     <hr>
     <input type="text" v-model="color">
+    <br>
+    <input type="text" v-model="width">
   </div>
 </template>
 
@@ -15,7 +17,16 @@ export default {
   name: 'app',
   data: function() {
   return {
-    color: 'gray'
+    color: 'gray',
+    width: 100
+    }
+  },
+  computed: {
+    myStyle: function () {
+      return {
+        backgroundColor: this.color,
+        width: this.width + 'px'
+      }
     }
   }
 
