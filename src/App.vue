@@ -10,6 +10,7 @@
     <hr>
     <button v-on:click="increase">Click me</button>
     <h3>{{ counter }}</h3>
+    <p v-on:mousemove="updateCoordinates">Coordinates: {{ x }} / {{ y }}</p>
     </div>
 </template>
 
@@ -25,7 +26,9 @@ export default {
         link: 'https://google.com',
         google: 'Google',
         finishedLink: '<a href="http://google.com">Google</a>',
-        counter: 0
+        counter: 0,
+        x: 0,
+        y: 0
       }
     },
     methods: {
@@ -39,6 +42,10 @@ export default {
       },
       increase: function() {
           this.counter++
+      },
+      updateCoordinates: function(event) {
+          this.x = event.clientX
+          this.y = event.clientY
       }
     }
 
