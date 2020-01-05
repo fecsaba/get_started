@@ -2,7 +2,7 @@
   <div id="app">
     <div class="demo"
          @click="attachRed = !attachRed"
-          :class="{red: attachRed, blue: attachRed}">
+          :class="divClasses">
     </div>
     <div class="demo" :class="{red: attachRed}"></div>
     <div class="demo"></div>
@@ -17,6 +17,14 @@ export default {
   data: function() {
   return {
       attachRed: false
+    }
+  },
+  computed: {
+    divClasses: function () {
+      return {
+        red: this.attachRed,
+        blue: !this.attachRed
+      }
     }
   }
 
