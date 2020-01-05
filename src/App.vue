@@ -2,7 +2,7 @@
   <div id="app">
     <div class="demo"
          @click="attachRed = !attachRed"
-          :class="{red: attachRed}">
+          :class="{red: attachRed, blue: attachRed}">
     </div>
     <div class="demo" :class="{red: attachRed}"></div>
     <div class="demo"></div>
