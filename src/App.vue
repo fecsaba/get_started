@@ -11,7 +11,7 @@
     <button v-on:click="increase(2, $event)">Click me</button>
     <h3>{{ counter }}</h3>
     <p v-on:mousemove="updateCoordinates">
-      Coordinates: {{ x }} / {{ y }} - <span v-on:mousemove="dummy">DEAD-SPOT</span></p>
+      Coordinates: {{ x }} / {{ y }} - <span v-on:mousemove.stop="">DEAD-SPOT</span></p>
     </div>
 </template>
 
