@@ -3,7 +3,7 @@
 
     <input type="text" v-bind:placeholder="ph" @input="changeTitle">
     <p>{{ title }}</p>
-    <p>{{ sayHello() }}</p>
+    <p>{{ sayHello() }} - <a :href="link">{{google}}</a></p>
   </div>
 </template>
 
@@ -15,7 +15,9 @@ export default {
     data() {
       return {
           title: 'Hello',
-        ph: 'Write here any'
+        ph: 'Write here any',
+        link: 'https://google.com',
+        google: 'Google'
       }
     },
     methods: {
