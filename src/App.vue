@@ -10,7 +10,8 @@
     <hr>
     <button v-on:click="increase(2, $event)">Click me</button>
     <h3>{{ counter }}</h3>
-    <p v-on:mousemove="updateCoordinates">Coordinates: {{ x }} / {{ y }}</p>
+    <p v-on:mousemove="updateCoordinates">
+      Coordinates: {{ x }} / {{ y }} - <span v-on:mousemove="dummy">DEAD-SPOT</span></p>
     </div>
 </template>
 
@@ -48,6 +49,9 @@ export default {
       updateCoordinates: function(event) {
           this.x = event.clientX
           this.y = event.clientY
+      },
+      dummy: function(event) {
+          event.stopPropagation()
       }
     }
 
