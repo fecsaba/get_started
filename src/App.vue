@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="demo"></div>
+    <div class="demo" :style="{backgroundColor: color}"></div>
     <div class="demo"></div>
     <div class="demo"></div>
     <hr>
