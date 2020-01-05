@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-
+    <h1 v-once>{{ title }}</h1>
     <input type="text" v-bind:placeholder="ph" @input="changeTitle">
     <p>{{ title }}</p>
     <p>{{ sayHello() }} - <a :href="link">{{google}}</a></p>
@@ -26,6 +26,7 @@ export default {
             this.title = event.target.value
         },
       sayHello: function () {
+          this.title = 'Hi'
         return this.title + ' vue'
       }
     }
