@@ -6,6 +6,12 @@
     <button v-on:click="secondCounter--">Decrease second</button>
     <h3>Counter: {{ counter }} | {{ secondCounter }}</h3>
     <p>Result: {{ result() }} | {{ output }}</p>
+
+    <!--Shorthands
+    v-on: - @
+    v-bind - :
+     -->
+
   </div>
 </template>
 
