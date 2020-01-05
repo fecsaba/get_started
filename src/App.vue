@@ -4,6 +4,9 @@
     <input type="text" v-bind:placeholder="ph" @input="changeTitle">
     <p>{{ title }}</p>
     <p>{{ sayHello() }} - <a :href="link">{{google}}</a></p>
+    <hr>
+    <p>{{ finishedLink }}</p>
+    <p v-html="finishedLink"></p>
   </div>
 </template>
 
@@ -17,7 +20,8 @@ export default {
           title: 'Hello',
         ph: 'Write here any',
         link: 'https://google.com',
-        google: 'Google'
+        google: 'Google',
+        finishedLink: '<a href="http://google.com">Google</a>'
       }
     },
     methods: {
