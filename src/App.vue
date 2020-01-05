@@ -2,8 +2,10 @@
   <div id="app">
     <button v-on:click="counter++">Increase</button>
     <button v-on:click="counter--">Decrease</button>
-    <h3>Counter: {{ counter }}</h3>
-    <p>Result: {{ result() }}</p>
+    <button v-on:click="secondCounter++">Increase second</button>
+    <button v-on:click="secondCounter--">Decrease second</button>
+    <h3>Counter: {{ counter }} | {{ secondCounter }}</h3>
+    <p>Result: {{ result() }} | {{ output }}</p>
   </div>
 </template>
 
@@ -12,16 +14,22 @@
 
 export default {
   name: 'app',
-    data: function() {
-      return {
-        counter: 0
-      }
-    },
-    methods: {
-      result() {
-        return this.counter > 5 ? 'Greater 5' : 'Smaller 5'
-      }
+  data: function() {
+    return {
+      counter: 0,
+      secondCounter: 0
     }
+  },
+  computed: {
+    output: function () {
+      return this.secondCounter > 5 ? 'Greater 5' : 'Smaller 5'
+    }
+  },
+  methods: {
+    result() {
+      return this.counter > 5 ? 'Greater 5' : 'Smaller 5'
+    }
+  }
 }
 
 </script>
