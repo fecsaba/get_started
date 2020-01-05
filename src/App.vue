@@ -25,6 +25,15 @@ export default {
       return this.secondCounter > 5 ? 'Greater 5' : 'Smaller 5'
     }
   },
+  watch: {
+    // eslint-disable-next-line no-unused-vars
+    counter: function (value) {
+      let vm = this
+      setTimeout(function () {
+        vm.counter = 0
+      }, 2000)
+    }
+  },
   methods: {
     result() {
       return this.counter > 5 ? 'Greater 5' : 'Smaller 5'
