@@ -4,7 +4,7 @@
          @click="attachRed = !attachRed"
           :class="{red: attachRed}">
     </div>
-    <div class="demo"></div>
+    <div class="demo" :class="{red: attachRed}"></div>
     <div class="demo"></div>
   </div>
 </template>
